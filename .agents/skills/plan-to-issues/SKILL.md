@@ -14,8 +14,8 @@ in a shell this agent can run.
 2. Draft the split as a table: title · plan section · scope · done when · blocked by.
    One issue per unit of work.
 3. **Stop and show the table to the human.** Publish nothing until they approve it.
-4. Ask the human what every issue here must carry (fields, labels, wording), unless it is
-   already written down in this session or in the repo.
+4. Every issue carries the shape under "Issue shape" below. Ask the human only about what this
+   plan needs beyond it.
 5. Create each issue in dependency order, so blocked-by can cite real numbers:
 
    ```sh
@@ -29,6 +29,31 @@ Closing one, with the closing comment from AGENTS.md:
 ```sh
 gh issue close <n> -c "<closing comment>"
 ```
+
+## Issue shape
+
+Chosen by the lane's owner (daniel, 2026-10-29, plan morning-digest). The body opens with the source
+line, then four headed parts:
+
+```md
+Source: plan.md § <n>
+
+## Scope
+<what to build, from the plan's words; the styleguide and ADR rules it touches>
+
+## Done when
+<the plan's done condition, word for word>
+
+## Blocked by
+<#n, and what of it is needed (e.g. "#1 (src/digest/types.ts only)"), or —>
+
+## Model
+<strongest for logic, cheaper for views, tests and uploads, and why>
+```
+
+- Label: `plan:<plan>` from the plan's frontmatter (`gh label create` it once).
+- A step that waits on someone outside the lane (a reviewer, a host) is done when they have acted,
+  not when it is sent. Its "Done when" says so, and it stays open until then.
 
 ## No `gh`
 
