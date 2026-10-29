@@ -9,6 +9,7 @@ Read first: `docs/vision.md`, `docs/styleguide.md`. Decisions: `docs/adr/`.
 
 - `pnpm dev` / `pnpm start`: serves on `PORT` (8787). Needs `.env` (copy `.env.example`).
 - `pnpm test`: vitest. `pnpm typecheck`: tsc.
+- `pnpm preview [path] [out]`: saves a page (default `/digest/2026-10-28`) as one HTML file under `var/preview/` for review (ADR 0003). Never commit it.
 
 ## How work moves here
 
