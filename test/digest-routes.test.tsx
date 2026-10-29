@@ -4,7 +4,8 @@ import { join } from 'node:path';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { createApp } from '../src/app.js';
 
-const GOOD = '2026-10-28';
+// 2026-10-27 has no bad line; 2026-10-28 has one (covered by the reader tests).
+const GOOD = '2026-10-27';
 const EMPTY = '2026-01-01';
 const BAD = '2026-01-02';
 const MISSING = '2026-01-03';
